@@ -20,10 +20,35 @@
     <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-
+     
     <!-- Custom styles for this template -->
     <link href="css/resume.min.css" rel="stylesheet">
+<script>
+window.onload = function() {
 
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "CGPA"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 3.09, label: "First-Semester"},
+			{y: 3.09, label: "Second-Semester"},
+			{y: 3.09, label: "Third-Semester"},
+			{y: 3.09, label: "Fourth-Semester"},
+			
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
   </head>
 
   <body id="page-top">
@@ -61,6 +86,7 @@
 		  <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
           </li>
+		  
         </ul>
       </div>
     </nav>
@@ -145,7 +171,8 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Wichita State University</h3>
               <div class="subheading mb-3">Masters in Computer Science</div>
-              <p>GPA: 3.80</p>
+              <div id="chartContainer" align="right" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
             </div>
             <div class="resume-date text-md-right">
               <span class="text-primary">August 2017- present</span>
